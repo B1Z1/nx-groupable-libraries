@@ -14,7 +14,19 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-groupable-libraries/design": ["libs/design/index.ts"],
+      "@nx-groupable-libraries/design/button": [
+        "libs/design/button/src/index.ts"
+      ],
+      "@nx-groupable-libraries/design/dropdown": [
+        "libs/design/dropdown/src/index.ts"
+      ],
+      "@nx-groupable-libraries/design/label": [
+        "libs/design/label/src/index.ts"
+      ],
+      "@nx-groupable-libraries/shop/cart": ["libs/shop/cart/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

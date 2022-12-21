@@ -1,0 +1,43 @@
+{
+  "name": "design-dropdown",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/design/dropdown/src",
+  "prefix": "nx-groupable-libraries",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/design/dropdown"],
+      "options": {
+        "project": "libs/design/dropdown/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/design/dropdown/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/design/dropdown/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/design/dropdown"],
+      "options": {
+        "jestConfig": "libs/design/dropdown/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/design/dropdown/**/*.ts",
+          "libs/design/dropdown/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

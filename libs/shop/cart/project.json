@@ -1,0 +1,43 @@
+{
+  "name": "shop-cart",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shop/cart/src",
+  "prefix": "nx-groupable-libraries",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shop/cart"],
+      "options": {
+        "project": "libs/shop/cart/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shop/cart/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shop/cart/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shop/cart"],
+      "options": {
+        "jestConfig": "libs/shop/cart/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shop/cart/**/*.ts",
+          "libs/shop/cart/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
